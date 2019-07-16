@@ -1,13 +1,12 @@
 package com.ittrident.test;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Properties;
 import static io.restassured.RestAssured.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import com.ittrident.util.PropertyReader;
 import io.restassured.response.Response;
 
 public class MonicaTest {  
@@ -15,10 +14,7 @@ public class MonicaTest {
   @BeforeMethod
   public void setup() throws IOException  
   {  
-	 String filepath =  System.getProperty("user.dir") + "\\"+ "src\\main\\java\\com\\ittrident\\config";
-	 FileInputStream in = new FileInputStream(filepath+"\\"+"config.properties");
-	 Properties prop = new Properties();
-	 prop.load(in);
+	 PropertyReader prop = new PropertyReader();
 	 baseURI = prop.getProperty("url_api");
   }	
 	
