@@ -10,8 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;
 
-public class MonicaTest {	
-  
+public class MonicaTest {  
 	
   @BeforeMethod
   public void setup() throws IOException  
@@ -20,9 +19,8 @@ public class MonicaTest {
 	 FileInputStream in = new FileInputStream(filepath+"\\"+"config.properties");
 	 Properties prop = new Properties();
 	 prop.load(in);
-	 baseURI = prop.getProperty("url_api"); 
-  }
-	
+	 baseURI = prop.getProperty("url_api");
+  }	
 	
   @Test
   public void taskTest() 
